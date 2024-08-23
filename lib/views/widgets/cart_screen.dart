@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grocery_app/models/cart_notifier.dart';
 import 'package:grocery_app/views/widgets/main_screen.dart';
-import 'package:grocery_app/views/widgets/payment.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 
 class CartScreen extends StatefulWidget {
@@ -13,10 +14,55 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  late Razorpay _razorpay;
+  void chkout(amount)async{
+    amount = amount*100;
+      var options = {
+        'key':'rzp_test_1DP5mmOlF5G5ag',
+        'amount': amount,
+        'name':'Flashkart',
+        'prefill':{'contact':'123456789','email':'Flashkart@gmail.com'},
+        'external':{
+          'wallets':['paytm']
+        }
+      };
+  try{
+    _razorpay.open(options);
+  }catch(e){
+    debugPrint('Error : e');
+  }
+  }
+  void handlepayment(PaymentSuccessResponse response){
+    Fluttertoast.showToast(msg: 'payment Successful'+response.paymentId!,toastLength: Toast.LENGTH_SHORT);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
+
+  }
+  void handlepaymenterror(PaymentFailureResponse response){
+    Fluttertoast.showToast(msg: 'payment Fail'+response.message!,toastLength: Toast.LENGTH_SHORT);
+
+
+  }
+  void handleexternalwallet(ExternalWalletResponse response){
+    Fluttertoast.showToast(msg: 'External Wallet'+response.walletName!,toastLength: Toast.LENGTH_SHORT);
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _razorpay.clear();
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS,handlepayment);
+_razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlepaymenterror);
+_razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleexternalwallet);
+  }
   @override
   Widget build(BuildContext context) {
     final obj=CartNotifier.of(context);
-    double amount = obj.getTprice();
     final flist=obj.cart;
 
     _productQuantity(IconData icon,int index){
@@ -37,12 +83,9 @@ class _CartScreenState extends State<CartScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (_)=>const MainScreen()));
-        }, icon:const Icon(Icons.home)) ,
+        leading: const Icon(Icons.shopping_bag) ,
         title:const Text("MY cart",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(221, 182, 176, 176),
       ),
 
       body: Column(children: [
@@ -97,7 +140,7 @@ class _CartScreenState extends State<CartScreen> {
               Text("Rs ${obj.getTprice()}",style:  const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),),
 
               ElevatedButton.icon(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Razorpaye(amount:amount)));
+                chkout(obj.getTprice());
               },icon: Icon(Icons.send), label: Text("Check out"))
             ],
           ),
