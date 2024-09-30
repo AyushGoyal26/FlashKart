@@ -13,4 +13,8 @@ We started with Firebase Authentication, enabling users to sign up and log in us
 2. Dynamic Home Screen
 
 The home screen is where users first interact with the app. At the top of the screen, we display the user’s address, fetched using the Geolocator package. Below that, interactive cards lead to the menu screen. The home screen also features a bottom navigation bar with three tabs — Home, Cart , Profile — each providing access to different parts of the app. While some of these screens contain static data, the Home screen is fully functional, offering a dynamic user experience.
+
+3. Category Screen & Cart Functionality
+
+The category screen is a critical part of the app, allowing users to browse through different item categories. We implemented a scroll-able list of tabs representing these categories, and clicking on each tab renders a list of items cards. The items details, including names, descriptions, and prices, are made individually in a file. The bottom navigation button takes users to the Cart screen, where they can review their order, adjust quantities, and proceed to checkout.
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
