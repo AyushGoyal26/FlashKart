@@ -17,4 +17,10 @@ The home screen is where users first interact with the app. At the top of the sc
 3. Category Screen & Cart Functionality
 
 The category screen is a critical part of the app, allowing users to browse through different item categories. We implemented a scroll-able list of tabs representing these categories, and clicking on each tab renders a list of items cards. The items details, including names, descriptions, and prices, are made individually in a file. The bottom navigation button takes users to the Cart screen, where they can review their order, adjust quantities, and proceed to checkout.
+
+4. Checkout and Payment Integration
+
+For the checkout process, we integrated two payment methods: UPI (which currently works only on Android) and Razorpay. The Razorpay integration uses a demo/test mode since this is not a production app. Although users can go through the motions of selecting a payment method, the app currently doesn’t complete actual transactions — a feature we plan to implement more fully in the future.
+
+
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
