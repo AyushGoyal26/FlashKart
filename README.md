@@ -22,5 +22,9 @@ The category screen is a critical part of the app, allowing users to browse thro
 
 For the checkout process, we integrated two payment methods: UPI (which currently works only on Android) and Razorpay. The Razorpay integration uses a demo/test mode since this is not a production app. Although users can go through the motions of selecting a payment method, the app currently doesn’t complete actual transactions — a feature we plan to implement more fully in the future.
 
+5. UI/UX Considerations
+
+We placed a strong emphasis on creating a user-friendly interface that mirrors the experience of using a professional app. This included designing a splash screen with a loading indicator, using consistent color schemes, and ensuring that navigation was intuitive. While the app isn’t fully feature-complete, the foundation we’ve built offers a smooth and visually appealing user experience.
+
 
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
