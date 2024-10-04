@@ -26,5 +26,11 @@ For the checkout process, we integrated two payment methods: UPI (which currentl
 
 We placed a strong emphasis on creating a user-friendly interface that mirrors the experience of using a professional app. This included designing a splash screen with a loading indicator, using consistent color schemes, and ensuring that navigation was intuitive. While the app isn’t fully feature-complete, the foundation we’ve built offers a smooth and visually appealing user experience.
 
+The Challenges We Faced
+
+1. State Management with BLoC
+
+Implementing BLoC (Business Logic Component) for state management was one of the most challenging aspects of this project. Ensuring that the state was correctly managed across multiple screens — especially in complex interactions like adding items to the cart or handling authentication — required careful planning and debugging.
+
 
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
