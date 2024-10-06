@@ -32,5 +32,9 @@ The Challenges We Faced
 
 Implementing BLoC (Business Logic Component) for state management was one of the most challenging aspects of this project. Ensuring that the state was correctly managed across multiple screens — especially in complex interactions like adding items to the cart or handling authentication — required careful planning and debugging.
 
+2. Geolocation Integration
+
+Fetching and displaying the user’s location using the Geolocator package posed its own set of challenges. We had to account for various permissions, handle errors gracefully, and ensure that the location data was accurate and updated in real-time.
+
 
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
