@@ -36,5 +36,9 @@ Implementing BLoC (Business Logic Component) for state management was one of the
 
 Fetching and displaying the user’s location using the Geolocator package posed its own set of challenges. We had to account for various permissions, handle errors gracefully, and ensure that the location data was accurate and updated in real-time.
 
+3. Payment Gateway Integration
+
+While integrating UPI and Razorpay was relatively straightforward, the challenge lay in ensuring that the payment process was smooth and intuitive. Given that Razorpay is in test mode, we had to simulate the payment process without actually processing transactions — a task that required careful attention to detail.
+
 
 https://medium.com/@jainarpit579/building-flashkart-an-e-commerce-store-4d6e488025a3
