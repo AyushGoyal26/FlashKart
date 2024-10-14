@@ -43,3 +43,5 @@ While integrating UPI and Razorpay was relatively straightforward, the challenge
 4. Collaboration Using GitHub
 
 This was our first time working on a project of this scale using GitHub. Managing version control, handling merge conflicts, and ensuring that everyone was on the same page took some getting used to, but it ultimately strengthened our teamwork and communication skills.
+
+.
