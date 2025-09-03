@@ -1,5 +1,4 @@
 
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_app/cubit/user_state.dart';
 import 'package:grocery_app/services/oauth.dart';
@@ -16,4 +15,5 @@ class UserCubit extends Cubit<UserState>{
     String image=userCred.user!.photoURL!.toString();
     emit(UserState.fillUserInfo(email, name, image));
   }
+
 }
