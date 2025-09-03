@@ -3,7 +3,6 @@ class UserState{
   late String name;
   late String image;
 
-
 UserState(){
   email="";
   name="";
@@ -11,5 +10,6 @@ UserState(){
 }
 
 UserState.fillUserInfo(this.email,this.name,this.image);
+
 
 }
