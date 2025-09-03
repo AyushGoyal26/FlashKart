@@ -1,5 +1,5 @@
 # FlashKart
-The Idea 
+## The Idea 
 
 
 The idea was simple: recreate the core functionalities of the ‘FlashKart’ in a way that would allow users to browse different grocery items , add them to their cart, and simulate the checkout process. We wanted to build something that felt like a real app, with user authentication, dynamic content, and a smooth user experience.
